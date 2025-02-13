@@ -1,0 +1,15 @@
+.circle-comp {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-100px, -100px) scale(0);
+  animation: animation 0.3s ease-in forwards;
+}
+
+@keyframes animation {
+  to {
+    transform: translate(-100px, -100px) scale(1);
+  }
+}
