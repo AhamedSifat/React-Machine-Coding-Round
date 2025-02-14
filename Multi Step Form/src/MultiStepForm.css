@@ -1,0 +1,189 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #5a67d8;
+  --primary-color-dark: #434190;
+  --secondary-color: #e53e3e;
+  --secondary-color-dark: #c53030;
+  --accent-color: #48bb78;
+  --bg-color: #f7fafc;
+  --card-bg: #ffffff;
+  --text-color: #2d3748;
+  --muted-text: #718096;
+  --input-border: #e2e8f0;
+  --transition-speed: 0.3s;
+}
+
+/* Global Body Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Sections */
+.form-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Form Section (Card Style) */
+.form-section {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.form-section:hover {
+  transform: translateY(-2px);
+}
+
+/* Section Headings */
+.form-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.form-section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  border-radius: 2px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--muted-text);
+}
+
+/* Inputs & Selects */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(90, 103, 216, 0.4);
+}
+
+/* Custom Select Arrow */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2371896' viewBox='0 0 24 24'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.cancel-button,
+.submit-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+/* Cancel Button */
+.cancel-button {
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--secondary-color-dark)
+  );
+  color: #fff;
+}
+
+.cancel-button:hover {
+  transform: scale(1.05);
+}
+
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  color: #fff;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
