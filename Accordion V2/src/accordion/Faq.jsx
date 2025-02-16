@@ -5,6 +5,16 @@ import { useState } from 'react';
 function Faq() {
   const [showIndex, setShowIndex] = useState(-1);
 
+  const handleQnA = (index) => {
+    setShowIndex((prev) => {
+      if (prev === index) {
+        return -1;
+      } else {
+        return index;
+      }
+    });
+  };
+
   return (
     <div
       style={{
@@ -20,7 +30,7 @@ function Faq() {
           key={index}
           faq={d}
           show={showIndex === index}
-          handleClick={() => setShowIndex(index)}
+          handleClick={() => handleQnA(index)}
         />
       ))}
     </div>
