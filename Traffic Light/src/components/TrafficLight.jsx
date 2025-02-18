@@ -23,7 +23,7 @@ function TrafficLight({ TrafficLights }) {
         sortedTrafficLights_order[0];
       setActiveLight(nextLight);
     }, activeLight.time);
-  }, [activeLight]);
+  }, [activeLight, sortedTrafficLights_order]);
 
   return (
     <div
