@@ -18,7 +18,6 @@ function TrafficLight({ TrafficLights }) {
         (l) => l.color === activeLight.color
       );
       const nextLightIndex = currentLightIndex + 1;
-
       const nextLight =
         sortedTrafficLights_order[nextLightIndex] ??
         sortedTrafficLights_order[0];
