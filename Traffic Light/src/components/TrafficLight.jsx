@@ -33,7 +33,7 @@ function TrafficLight({ TrafficLights }) {
         flexDirection: 'column',
         gap: '5px',
         width: '100px',
-        backgroundColor: 'gray',
+        backgroundColor: '#ededed',
         alignItems: 'center',
         borderRadius: '20px',
         padding: '12px 0',
