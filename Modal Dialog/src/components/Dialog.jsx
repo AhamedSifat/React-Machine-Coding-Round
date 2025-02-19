@@ -17,7 +17,7 @@ function Dialog({ onClose, children }) {
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, []);
+  });
 
   const handleClose = () => {
     contentRef.current.classList.add('hide-dialog');
