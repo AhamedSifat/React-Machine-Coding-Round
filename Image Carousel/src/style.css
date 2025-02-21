@@ -1,0 +1,125 @@
+.carousel,
+.box {
+  width: 80vw;
+  min-width: 200px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #2e2e2e;
+}
+
+.box {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.box img[data-active='true'] {
+  opacity: 1;
+}
+
+.box img[data-active='false'] {
+  opacity: 0;
+}
+
+.app img {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  border-radius: 6px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+
+.next,
+.prev {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: all 0.2s linear;
+  background-color: white;
+}
+
+.next:hover,
+.prev:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.next {
+  top: 50%;
+  left: -30px;
+}
+
+.prev {
+  top: 50%;
+  right: -30px;
+}
+
+.dot-stepper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #3b82f6;
+  transform: scale(1.2);
+}
+.show {
+  animation: showAnimation 1s ease-in-out forwards;
+  z-index: 3;
+  opacity: 1 !important;
+}
+
+.hide {
+  animation: hideAnimation 1s ease-in-out forwards;
+  z-index: 2;
+  opacity: 0;
+}
+
+@keyframes showAnimation {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hideAnimation {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
