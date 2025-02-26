@@ -1,0 +1,80 @@
+[data-theme='light'] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+[data-theme='dark'] {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+}
+
+.nav-link {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Toggle switch container */
+.mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+.mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider styling */
+.mode-switch .slider-round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red; /* default background */
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+/* Slider knob */
+.mode-switch .slider-round::before {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 2px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When the checkbox is checked, change background and move the knob */
+.mode-switch input:checked + .slider-round {
+  background-color: #2196f3;
+}
+
+.mode-switch input:checked + .slider-round::before {
+  transform: translateX(20px);
+}
