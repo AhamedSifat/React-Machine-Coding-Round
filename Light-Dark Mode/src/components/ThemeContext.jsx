@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const ThemeContext = createContext('light');
 
@@ -25,5 +26,8 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
+ThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => useContext(ThemeContext);
